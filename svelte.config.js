@@ -3,7 +3,10 @@ import preprocess from 'svelte-preprocess'
 
 const config = {
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			pages: 'docs',
+			assets: 'docs',
+		}),
 		prerender: {
 			default: true,
 		},
