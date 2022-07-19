@@ -7,9 +7,12 @@ export const downloadUrls = {
 
 export const defaultDownloadOs = readable(null, (set) => {
   if (typeof navigator !== 'undefined') {
-    if (navigator.userAgent.match(/Windows/i)) {
+    if (navigator.platform.toLowerCase().indexOf('win') >= 0) {
       set('win')
-    } else if (navigator.userAgent.match(/Mac/i)) {
+    } else if (
+      navigator.platform.toLowerCase().indexOf('mac') >= 0 &&
+      (!navigator.maxTouchPoints || navigator.maxTouchPoints < 1)
+    ) {
       set('mac')
     }
   }
