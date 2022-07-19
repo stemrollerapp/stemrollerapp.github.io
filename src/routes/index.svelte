@@ -9,7 +9,9 @@
 
 <svelte:head>
   <title>StemRoller - Make stems, instrumental, or acapella version of any song!</title>
+  <meta property="og:title" content="StemRoller - Make stems, instrumental, or acapella version of any song!" />
   <meta name="description" property="og:description" content="StemRoller isolates instruments and vocals from any song using advanced AI and machine learning techniques. Make karaoke (instrumental), vocal, drum, and bass tracks from any recording in one click!" />
+  <meta property="og:image" content="https://www.stemroller.com/img/og-image.png" />
 </svelte:head>
 
 <div class="relative w-full md:min-h-full bg-slate-900">

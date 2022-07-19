@@ -11,8 +11,10 @@
 </script>
 
 <svelte:head>
-  <title>{title} | StemRoller - Make stems, instrumental, or acapella version of any song!</title>
+  <title>{title} - Redirecting... | StemRoller</title>
+  <meta property="og:title" content={`${title} - Redirecting... | StemRoller`} />
   <meta name="description" property="og:description" content={`Redirecting to StemRoller's ${title} page...`} />
+  <meta property="og:image" content="https://www.stemroller.com/img/og-image.png" />
 </svelte:head>
 
 <div class="relative w-full min-h-full bg-slate-900 text-slate-100 p-12 text-center">
