@@ -1,30 +1,26 @@
+<script>
+  import LogoText from '$components/LogoText.svelte'
+  import LogoSubText from '$components/LogoSubText.svelte'
+  import DownloadButtons from '$components/DownloadButtons.svelte'
+  import AppDemo from '$components/AppDemo/AppDemo.svelte'
+</script>
+
 <svelte:head>
-  <title>StemRoller</title>
+  <title>StemRoller - Make stems, instrumental, or acapella version of any song!</title>
 </svelte:head>
 
-<!-- TODO: Setting min-width here is not ideal -->
-<div style="min-width: 600px" class="w-full min-h-screen flex flex-col items-center justify-center px-4 py-12 space-y-8 bg-slate-900 text-slate-100 overflow-auto">
-  <div class="flex flex-row items-center justify-center space-x-6">
-    <img class="w-16 h-16" src="/favicon.png" alt="StemRoller logo">
-    <h1 class="font-light text-4xl">StemRoller</h1>
+<div class="relative w-full min-h-full bg-slate-900">
+  <div class="absolute overflow-hidden w-full h-full">
+    <img class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[105%] max-w-[105%] blur-md" src="/img/hero-bg.png" alt="" />
   </div>
-  <div class="flex flex-row items-center justify-center space-x-3">
-    <a class="flex flex-row items-center justify-center px-6 py-3 rounded-md text-slate-900 bg-cyan-500 hover:bg-cyan-400 active:bg-cyan-400 transition-all focus:outline-none drop-shadow-md hover:drop-shadow-lg focus:ring focus:ring-cyan-300" href="https://github.com/stemrollerapp/stemroller/releases/download/1.0.0/StemRoller-1.0.0-win.zip" download={true}>
-      <div class="w-6 h-6 mr-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-        </svg>
-      </div>
-      <div class="font-bold">Windows</div>
-    </a>
-    <a class="flex flex-row items-center justify-center px-6 py-3 rounded-md text-slate-900 bg-cyan-500 hover:bg-cyan-400 active:bg-cyan-400 transition-all focus:outline-none drop-shadow-md hover:drop-shadow-lg focus:ring focus:ring-cyan-300" href="https://github.com/stemrollerapp/stemroller/releases/download/1.0.0/StemRoller-1.0.0-mac.zip" download={true}>
-      <div class="w-6 h-6 mr-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-        </svg>
-      </div>
-      <div class="font-bold">macOS</div>
-    </a>
+
+  <div class="relative w-full md:max-w-[1080px] xl:max-w-[1400px] min-h-screen m-auto space-y-2 sm:space-y-4 md:space-y-0 px-5 py-4 md:px-10 md:py-8 md:flex md:flex-row md:items-center md:justify-between md:space-x-10">
+    <div class="grow-0 shrink-0 flex flex-col md:h-full md:justify-center space-y-1 sm:space-y-3 md:space-y-4 xl:space-y-6">
+      <LogoText />
+      <LogoSubText />
+      <DownloadButtons />
+    </div>
+
+    <AppDemo />
   </div>
-  <video class="max-w-lg rounded-md border border-slate-700" src="/demo.m4v" autoplay={true} loop={true} playsinline={true}></video>
 </div>

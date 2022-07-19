@@ -3,6 +3,11 @@ import preprocess from 'svelte-preprocess'
 
 const config = {
 	kit: {
+		alias: {
+			$components: 'src/components',
+			$icons: 'src/icons',
+			$utils: 'src/utils',
+		},
 		adapter: adapter({
 			pages: 'docs',
 			assets: 'docs',
