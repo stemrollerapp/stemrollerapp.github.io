@@ -50,9 +50,9 @@
 </script>
 
 <div class="overflow-hidden w-full" bind:clientWidth={displayWidth} bind:clientHeight={displayHeight}>
-  <div style={`margin: auto; padding: 1px; width: ${Math.ceil(640 * scale) + 2}px; height: ${Math.ceil(480 * scale) + 2}px;`} class="relative rounded-md overflow-hidden bg-pink-500">
+  <div style={`margin: auto; padding: 1px; width: ${Math.ceil(640 * scale) + 2}px; height: ${Math.ceil(480 * scale) + 2}px;`} class="relative rounded-md overflow-hidden bg-gradient-to-br from-cyan-300 via-pink-500 to-fuchsia-700">
     <div style={`position: relative; width: 640px; height: 480px; transform: scale(${scale}); transform-origin: top left;`} class="bg-slate-900 rounded-md overflow-hidden">
-      <div class="absolute t-0 l-0 w-full h-full rounded-md overflow-hidden flex flex-col">
+      <div class="absolute top-0 left-0 w-full h-full rounded-md overflow-hidden flex flex-col">
         <SearchAndResults {DEMO_videosHook} {DEMO_onShowBottomBar} {DEMO_onOpenClicked} />
 
         {#if DEMO_statuses.length > 0}
@@ -65,11 +65,11 @@
       </div>
 
       {#if displayOverlay}
-        <div class={`absolute t-0 l-0 w-full h-full rounded-md overflow-hidden flex flex-col space-y-8 px-12 py-6 items-center justify-center bg-slate-900 text-slate-100 ${overlayOpaque ? 'opacity-100' : 'opacity-0'} transition-all`}>
+        <div class={`absolute top-0 left-0 w-full h-full rounded-md overflow-hidden flex flex-col space-y-8 px-12 py-6 items-center justify-center bg-slate-900 text-slate-100 ${overlayOpaque ? 'opacity-100' : 'opacity-0'} transition-all`}>
           <div class="font-bold text-4xl text-center">Easily split dozens of songs.<br />Just like that.</div>
           <div class="text-5xl">
             {#if downloadUrl}
-              <span class="p-[1px] bg-gradient-to-br from-pink-300 via-fuchsia-500 to-rose-900"><span class="bg-slate-900 hover:bg-transparent transition-all"><a class="px-4 font-bold text-transparent hover:text-slate-900 bg-clip-text bg-gradient-to-br from-pink-300 via-fuchsia-500 to-rose-900 transition-all" download href={downloadUrl}>Download</a></span></span> StemRoller.
+              <span class="p-[1px] bg-gradient-to-br from-pink-300 via-fuchsia-500 to-rose-900"><span class="bg-slate-900 hover:bg-transparent transition-all"><a class="px-4 font-bold text-transparent hover:text-slate-900 bg-clip-text bg-gradient-to-br from-pink-300 via-fuchsia-500 to-rose-900 transition-all" download={true} href={downloadUrl}>Download</a></span></span> StemRoller.
             {:else}
               Download StemRoller.
             {/if}

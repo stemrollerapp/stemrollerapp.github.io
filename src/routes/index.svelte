@@ -3,8 +3,11 @@
   import LogoSubText from '$components/LogoSubText.svelte'
   import DownloadButton from '$components/DownloadButton.svelte'
   import DownloadButtons from '$components/DownloadButtons.svelte'
+  import DownloadPopup from '$components/DownloadPopup.svelte'
   import AppDemo from '$components/AppDemo/AppDemo.svelte'
   import HeartIcon from '$icons/outline/HeartIcon.svelte'
+
+  let popupOs = null
 </script>
 
 <svelte:head>
@@ -23,22 +26,26 @@
     <div class="grow-0 shrink-0 flex flex-col md:h-full md:justify-center space-y-2 sm:space-y-3 md:space-y-4 xl:space-y-6">
       <LogoText />
       <LogoSubText />
-      <DownloadButtons />
+      <DownloadButtons onDownloaded={(os) => popupOs = os} />
     </div>
 
     <AppDemo />
   </div>
 </div>
 
-<div class="w-full bg-slate-300 text-slate-900 px-12 py-12">
+<div class="w-full bg-slate-300 text-slate-900 p-6 md:p-12">
   <div class="m-auto space-y-8 max-w-screen-xl">
     <p class="sm:text-3xl md:text-4xl xl:text-5xl leading-snug tracking-wide"><span class="sm:text-4xl md:text-5xl xl:text-7xl">StemRoller</span> enables anyone to make karaoke, vocal, and stem tracks from their favorite songs. Simply type the name of a song into the search bar - StemRoller will find the song online and split it into four stems: vocals, drums, bass, and everything else. <span class="sm:text-2xl md:text-2xl xl:text-4xl">For your convenience, an instrumental will also be created, containing all non-vocal stems mixed down into one track.</span></p>
-    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">StemRoller is totally free and <a class="underline" href="/source">open-source</a>, based on Facebook&apos;s state-of-the-art AI/machine learning research project <a class="underline" href="https://www.github.com/facebookresearch/demucs">Demucs</a>.</p>
-    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">Ran into an issue or had a question? We&apos;re available on <a class="underline" href="/chat">Discord</a> and would be happy to help!</p>
-    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">Enjoying the app? <a class="underline" href="/donate">Donations</a> are always appreciated.</p>
+    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">StemRoller is totally free and <a target="_blank" rel="noopener noreferrer" class="underline" href="/source">open-source</a>, based on Facebook&apos;s state-of-the-art AI/machine learning research project <a target="_blank" rel="noopener noreferrer" class="underline" href="https://www.github.com/facebookresearch/demucs">Demucs</a>.</p>
+    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">Ran into an issue or had a question? We&apos;re available on <a target="_blank" rel="noopener noreferrer" class="underline" href="/chat">Discord</a> and would be happy to help!</p>
+    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">Enjoying the app? <a target="_blank" rel="noopener noreferrer" class="underline" href="/donate">Donations</a> are always appreciated.</p>
   </div>
 </div>
 
 <div class="w-full bg-slate-700 text-slate-300 p-4 text-center">
-  <p class="text-md">Credits: all of StemRoller&apos;s <a class="underline" href="https://github.com/stemrollerapp/stemroller/blob/main/package.json#L24=">NPM dependencies</a>, plus <a class="underline" href="https://www.github.com/facebookresearch/demucs">Demucs</a>, <a class="underline" href="https://www.heroicons.com">Heroicons</a>, <a class="underline" href="https://www.ektype.in/font-family/mukta-16.html">Mukta</a>, and <a class="underline" href="https://marcelotduarte.github.io/cx_Freeze/">cx-Freeze</a>.</p>
+  <p class="text-md">Credits: all of StemRoller&apos;s <a target="_blank" rel="noopener noreferrer" class="underline" href="https://github.com/stemrollerapp/stemroller/blob/main/package.json#L24=">NPM dependencies</a>, plus <a target="_blank" rel="noopener noreferrer" class="underline" href="https://www.github.com/facebookresearch/demucs">Demucs</a>, <a target="_blank" rel="noopener noreferrer" class="underline" href="https://www.heroicons.com">Heroicons</a>, <a target="_blank" rel="noopener noreferrer" class="underline" href="https://www.ektype.in/font-family/mukta-16.html">Mukta</a>, and <a target="_blank" rel="noopener noreferrer" class="underline" href="https://marcelotduarte.github.io/cx_Freeze/">cx-Freeze</a>.</p>
 </div>
+
+{#if popupOs}
+  <DownloadPopup os={popupOs} onClose={() => popupOs = null} />
+{/if}

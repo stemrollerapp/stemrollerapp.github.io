@@ -65,7 +65,7 @@
   </div>
 
   <div class="relative grow shrink overflow-x-hidden overflow-y-hidden">
-    <div class="absolute t-0 l-0 w-full h-full overflow-x-hidden overflow-y-auto flex flex-col p-6 space-y-6">
+    <div class="absolute top-0 left-0 w-full h-full overflow-x-hidden overflow-y-auto flex flex-col p-6 space-y-6">
       {#if videos && status === null}
         {#each videos as video}
           <ResultCard {video} {onSplitClicked} {DEMO_onOpenClicked} />
