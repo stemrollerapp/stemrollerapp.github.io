@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "immutable/start-f87f16fb.js",
+    "file": "immutable/start-368bf1c5.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -25,7 +25,7 @@
       "_index-a5c969fc.js"
     ],
     "css": [
-      "immutable/assets/pages/__layout.svelte-43da1d1a.css"
+      "immutable/assets/pages/__layout.svelte-7588720a.css"
     ],
     "assets": [
       "immutable/assets/Mukta-Regular-87c47303.ttf",
@@ -62,7 +62,7 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "immutable/pages/index.svelte-3b1d0345.js",
+    "file": "immutable/pages/index.svelte-aa1745a2.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,

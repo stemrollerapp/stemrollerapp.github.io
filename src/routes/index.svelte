@@ -1,4 +1,5 @@
 <script>
+  import asyncTimeout from '$utils/asyncTimeout.js'
   import LogoText from '$components/LogoText.svelte'
   import LogoSubText from '$components/LogoSubText.svelte'
   import DownloadButton from '$components/DownloadButton.svelte'
@@ -7,7 +8,27 @@
   import AppDemo from '$components/AppDemo/AppDemo.svelte'
   import HeartIcon from '$icons/outline/HeartIcon.svelte'
 
-  let popupOs = null
+  let popupOs = null, popupOpaque = false, displayPopup = false
+
+  async function openPopup() {
+    await asyncTimeout(125)
+    displayPopup = true
+    await asyncTimeout(125)
+    popupOpaque = true
+  }
+
+  async function hidePopup() {
+    popupOpaque = false
+    await asyncTimeout(125)
+    displayPopup = false
+    popupOs = null
+  }
+
+  $: {
+    if (popupOs) {
+      openPopup()
+    }
+  }
 </script>
 
 <svelte:head>
@@ -46,6 +67,6 @@
   <p class="text-md">Credits: all of StemRoller&apos;s <a target="_blank" rel="noopener noreferrer" class="underline" href="https://github.com/stemrollerapp/stemroller/blob/main/package.json#L24=">NPM dependencies</a>, plus <a target="_blank" rel="noopener noreferrer" class="underline" href="https://www.github.com/facebookresearch/demucs">Demucs</a>, <a target="_blank" rel="noopener noreferrer" class="underline" href="https://www.heroicons.com">Heroicons</a>, <a target="_blank" rel="noopener noreferrer" class="underline" href="https://www.ektype.in/font-family/mukta-16.html">Mukta</a>, and <a target="_blank" rel="noopener noreferrer" class="underline" href="https://marcelotduarte.github.io/cx_Freeze/">cx-Freeze</a>.</p>
 </div>
 
-{#if popupOs}
-  <DownloadPopup os={popupOs} onClose={() => popupOs = null} />
+{#if displayPopup}
+  <DownloadPopup os={popupOs} opaque={popupOpaque} onClose={hidePopup} />
 {/if}
