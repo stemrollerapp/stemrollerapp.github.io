@@ -9,6 +9,7 @@
 
 <svelte:head>
   <title>StemRoller - Make stems, instrumental, or acapella version of any song!</title>
+  <meta name="description" property="og:description" content="StemRoller isolates instruments and vocals from any song using advanced AI and machine learning techniques. Make karaoke (instrumental), vocal, drum, and bass tracks from any recording in one click!" />
 </svelte:head>
 
 <div class="relative w-full md:min-h-full bg-slate-900">
@@ -29,9 +30,13 @@
 
 <div class="w-full bg-slate-300 text-slate-900 px-12 py-12">
   <div class="m-auto space-y-8 max-w-screen-xl">
-    <p class="sm:text-3xl md:text-4xl xl:text-5xl leading-snug tracking-wide"><span class="sm:text-4xl md:text-5xl xl:text-7xl">StemRoller</span> allows anyone to make vocal, karaoke or stem tracks from their favorite songs. Simply type the name of a song into the search bar - StemRoller will find the song online and split it into four tracks: vocals, drums, bass, and everything else.</p>
-    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">StemRoller is totally free and <a class="underline" href="/source">open-source</a>, based on Facebook&apos;s amazing <a class="underline" href="https://www.github.com/facebookresearch/demucs">Demucs</a> research project and <a class="underline" href="https://github.com/stemrollerapp/stemroller/blob/main/package.json#L24=">many other libraries</a>.</p>
+    <p class="sm:text-3xl md:text-4xl xl:text-5xl leading-snug tracking-wide"><span class="sm:text-4xl md:text-5xl xl:text-7xl">StemRoller</span> enables anyone to make karaoke, vocal, and stem tracks from their favorite songs. Simply type the name of a song into the search bar - StemRoller will find the song online and split it into four stems: vocals, drums, bass, and everything else. <span class="sm:text-2xl md:text-2xl xl:text-4xl">For your convenience, an instrumental will also be created, containing all non-vocal stems mixed down into one track.</span></p>
+    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">StemRoller is totally free and <a class="underline" href="/source">open-source</a>, based on Facebook&apos;s state-of-the-art AI/machine learning research project <a class="underline" href="https://www.github.com/facebookresearch/demucs">Demucs</a>.</p>
     <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">Ran into an issue or had a question? We&apos;re available on <a class="underline" href="/chat">Discord</a> and would be happy to help!</p>
-    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">Enjoying the app? <a class="underline" href="/donate">Donations</a> are always appreciated</p>
+    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">Enjoying the app? <a class="underline" href="/donate">Donations</a> are always appreciated.</p>
   </div>
+</div>
+
+<div class="w-full bg-slate-700 text-slate-300 p-4 text-center">
+  <p class="text-md">Credits: all of StemRoller&apos;s <a class="underline" href="https://github.com/stemrollerapp/stemroller/blob/main/package.json#L24=">NPM dependencies</a>, plus <a class="underline" href="https://www.github.com/facebookresearch/demucs">Demucs</a>, <a class="underline" href="https://www.heroicons.com">Heroicons</a>, <a class="underline" href="https://www.ektype.in/font-family/mukta-16.html">Mukta</a>, and <a class="underline" href="https://marcelotduarte.github.io/cx_Freeze/">cx-Freeze</a>.</p>
 </div>
