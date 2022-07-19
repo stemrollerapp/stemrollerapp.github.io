@@ -3,7 +3,11 @@
   import asyncTimeout from '$utils/asyncTimeout.js'
   import SearchAndResults from '$components/AppDemo/SearchAndResults.svelte'
   import ProcessQueue from '$components/AppDemo/ProcessQueue.svelte'
+  import BottomBar from '$components/AppDemo/BottomBar.svelte'
 
+  let displayOverlay = false, overlayOpaque = false
+  let displayBottomBar = false, bottomBarOpaque = false
+  let displayWidth = 0.0, displayHeight = 0.0
   let DEMO_statuses = []
 
   function DEMO_videosHook(videos) {
@@ -16,9 +20,12 @@
     DEMO_statuses = newStatuses
   }
 
-  let displayOverlay = false, overlayOpaque = false
-  let scale = 1.0
-  let displayWidth = 0.0, displayHeight = 0.0
+  async function DEMO_onShowBottomBar() {
+    bottomBarOpaque = false
+    displayBottomBar = true
+    await asyncTimeout(125)
+    bottomBarOpaque = true
+  }
 
   async function DEMO_onOpenClicked() {
     overlayOpaque = false
@@ -36,6 +43,7 @@
     }
   }
 
+  let scale = 1.0
   $: {
     scale = Math.min(displayWidth / 645.0, 1.0)
   }
@@ -45,10 +53,14 @@
   <div style={`margin: auto; padding: 1px; width: ${Math.ceil(640 * scale) + 2}px; height: ${Math.ceil(480 * scale) + 2}px;`} class="relative rounded-md overflow-hidden bg-pink-500">
     <div style={`position: relative; width: 640px; height: 480px; transform: scale(${scale}); transform-origin: top left;`} class="bg-slate-900 rounded-md overflow-hidden">
       <div class="absolute t-0 l-0 w-full h-full rounded-md overflow-hidden flex flex-col">
-        <SearchAndResults {DEMO_videosHook} {DEMO_onOpenClicked} />
+        <SearchAndResults {DEMO_videosHook} {DEMO_onShowBottomBar} {DEMO_onOpenClicked} />
 
         {#if DEMO_statuses.length > 0}
           <ProcessQueue {DEMO_statuses} {DEMO_onOpenClicked} />
+        {/if}
+
+        {#if displayBottomBar}
+          <BottomBar opaque={bottomBarOpaque} />
         {/if}
       </div>
 

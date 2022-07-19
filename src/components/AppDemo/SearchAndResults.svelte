@@ -8,13 +8,14 @@
 
   export let DEMO_videosHook = null
   export let DEMO_onOpenClicked = null
+  export let DEMO_onShowBottomBar = null
 
   let searchQuery = '', videos = null, status = null
 
   async function animate() {
     await asyncTimeout(1000)
 
-    const targetQuery = 'type song title here'
+    const targetQuery = 'Search any song/artist'
     status = 'loading'
     while (searchQuery.length < targetQuery.length) {
       searchQuery += targetQuery[searchQuery.length]
@@ -28,6 +29,8 @@
         status: null,
       }
     })
+
+    DEMO_onShowBottomBar()
   }
 
   async function onSplitClicked(video) {
