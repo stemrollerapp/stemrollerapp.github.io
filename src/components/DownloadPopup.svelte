@@ -32,10 +32,10 @@
 
     {#if os === 'win'}
       <ol class="leading-relaxed space-y-3 list-decimal ml-4">
-        <li>Once your download is finished, right-click <code class="bg-slate-700 px-2 py-1 rounded-md">{filename}</code>.</li>
-        <li>Click <span class="font-bold">Extract All</span>.</li>
-        <li>Open the extracted folder and double-click <code class="bg-slate-700 px-2 py-1 rounded-md">StemRoller.exe</code> to run the app.</li>
+        <li>Once your download is finished, double-click <code class="bg-slate-700 px-2 py-1 rounded-md">{filename}</code>.</li>
         <li>If Windows displays a dialog box indicating that the app was blocked by SmartScreen, click <span class="font-bold">More info</span>, then click <span class="font-bold">Run anyway</span>.</li>
+        <li>StemRoller will extract itself to the directory you choose. Once this is done, you may delete the original <code class="bg-slate-700 px-2 py-1 rounded-md">{filename}</code> you downloaded.</li>
+        <li>Open the extracted directory and double-click <code class="bg-slate-700 px-2 py-1 rounded-md">StemRoller.exe</code> to run the app.</li>
       </ol>
     {:else if os === 'mac'}
       <ol class="leading-relaxed space-y-3 list-decimal ml-4">
