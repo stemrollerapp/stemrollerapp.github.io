@@ -1,8 +1,8 @@
 import { readable } from 'svelte/store'
 
 export const downloadUrls = {
-  win: 'https://github.com/stemrollerapp/stemroller/releases/download/2.0.4/stemroller-2.0.4-win-cuda.exe',
-  mac: 'https://github.com/stemrollerapp/stemroller/releases/download/2.0.4/stemroller-2.0.4-mac.zip',
+  win: 'https://github.com/stemrollerapp/stemroller/releases/download/2.0.6/stemroller-2.0.6-win-cuda.exe',
+  mac: 'https://github.com/stemrollerapp/stemroller/releases/download/2.0.6/stemroller-2.0.6-mac.zip',
 }
 
 export const defaultDownloadOs = readable(null, (set) => {
