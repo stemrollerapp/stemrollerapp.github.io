@@ -76,18 +76,14 @@
 </div>
 
 <div class="w-full bg-slate-300 text-slate-900 p-6 md:p-12">
-  <div class="m-auto space-y-8 max-w-screen-xl">
-    <p class="sm:text-3xl md:text-4xl xl:text-5xl leading-snug tracking-wide">
-      <span class="sm:text-4xl md:text-5xl xl:text-7xl">StemRoller</span> enables anyone to make
-      karaoke, vocal, and stem tracks from their favorite songs. Simply type the name of a song into
-      the search bar - StemRoller will find the song online and split it into four stems: vocals,
-      drums, bass, and everything else.
-      <span class="sm:text-2xl md:text-2xl xl:text-4xl"
-        >For your convenience, an instrumental will also be created, containing all non-vocal stems
-        mixed down into one track.</span
-      >
+  <div class="m-auto max-w-screen-lg">
+    <p class="sm:text-3xl md:text-4xl leading-snug tracking-wide">
+      StemRoller enables anyone to make karaoke, vocal, and stem tracks from their favorite songs.
+      Simply type the name of a song into the search bar - StemRoller will find the song online and
+      split it into four stems: vocals, drums, bass, and everything else. For your convenience, an
+      instrumental will also be created, containing all non-vocal stems mixed down into one track.
     </p>
-    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">
+    <p class="sm:text-2xl md:text-2xl leading-snug tracking-wide mt-8">
       StemRoller is totally free and <a
         target="_blank"
         rel="noopener noreferrer"
@@ -101,7 +97,7 @@
         href="https://www.github.com/facebookresearch/demucs">Demucs</a
       >.
     </p>
-    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">
+    <p class="sm:text-2xl md:text-2xl leading-snug tracking-wide mt-8">
       Ran into an issue or had a question? We&apos;re available on <a
         target="_blank"
         rel="noopener noreferrer"
@@ -109,7 +105,7 @@
         href="/chat">Discord</a
       > and would be happy to help!
     </p>
-    <p class="sm:text-2xl md:text-2xl xl:text-4xl leading-snug tracking-wide">
+    <p class="sm:text-2xl md:text-2xl leading-snug tracking-wide">
       Enjoying the app? <a
         target="_blank"
         rel="noopener noreferrer"
