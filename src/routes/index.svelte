@@ -47,10 +47,6 @@
   <meta property="og:image" content="https://www.stemroller.com/img/og-image.png" />
 </svelte:head>
 
-<div class="w-full bg-cyan-400 font-bold p-2 text-center">
-  Includes new 6-stem and faster models!
-</div>
-
 <div class="relative w-full md:min-h-full bg-slate-900">
   <div class="absolute overflow-hidden w-full h-full">
     <img
